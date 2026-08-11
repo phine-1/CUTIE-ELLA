@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Cutie Ella 💖</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+        .floating-heart {
+            animation: float 4s ease-in-out infinite;
+        }
+        .floating-heart:nth-child(2) {
+            animation-duration: 6s;
+            animation-delay: 1s;
+        }
+        .floating-heart:nth-child(3) {
+            animation-duration: 5s;
+            animation-delay: 2s;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-rose-950 to-slate-900 min-h-screen text-slate-100 font-sans flex flex-col justify-between overflow-x-hidden">
+
+    <!-- Floating Background Elements -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none z-0 opacity-20">
+        <div class="floating-heart absolute top-12 left-10 text-4xl">❤️</div>
+        <div class="floating-heart absolute top-1/4 right-16 text-5xl">💖</div>
+        <div class="floating-heart absolute bottom-20 left-1/4 text-6xl">✨</div>
+        <div class="floating-heart absolute bottom-1/3 right-1/3 text-4xl">💕</div>
+    </div>
+
+    <!-- Header -->
+    <header class="relative z-10 py-6 px-6 text-center">
+        <span class="bg-rose-500/20 text-rose-300 border border-rose-500/30 text-xs uppercase tracking-widest px-4 py-1.5 rounded-full font-semibold backdrop-blur-md">
+            Special Delivery 💌
+        </span>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative z-10 max-w-2xl mx-auto px-6 py-12 text-center flex-grow flex flex-col justify-center items-center">
+        
+        <!-- Glowing Avatar / Heart Icon -->
+        <div class="w-24 h-24 bg-gradient-to-tr from-rose-500 to-pink-500 rounded-full flex items-center justify-center text-4xl shadow-lg shadow-rose-500/40 mb-8 animate-pulse">
+            💖
+        </div>
+
+        <!-- Greeting -->
+        <h1 class="text-4xl sm:text-6xl font-black tracking-tight mb-4">
+            Hi, <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-pink-400">Cutie Ella</span> ✨
+        </h1>
+
+        <!-- Romantic Message -->
+        <p class="text-lg sm:text-xl text-slate-300 leading-relaxed mb-10 max-w-lg">
+            Ever since you came into my world, everything feels a little brighter, a little warmer, and a whole lot more special. I made this little corner of the internet just to tell you something very important...
+        </p>
+
+        <!-- Big Confession Card -->
+        <div id="confession-box" class="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-8 shadow-2xl w-full max-w-md transition-all duration-500">
+            <h2 id="question-text" class="text-2xl font-bold mb-6 text-rose-200">
+                Do you know how much I adore you? 🥰
+            </h2>
+            
+            <div id="button-container" class="flex flex-col sm:flex-row justify-center gap-4 relative h-20">
+                <button id="yes-btn" onclick="sayYes()" class="bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-600 hover:to-pink-700 text-white font-bold px-8 py-3.5 rounded-2xl shadow-lg shadow-rose-600/30 transition transform hover:scale-105">
+                    Yes, I do! 💖
+                </button>
+                <button id="no-btn" onmouseover="moveButton()" onclick="moveButton()" class="bg-white/10 hover:bg-white/20 text-slate-300 font-semibold px-8 py-3.5 rounded-2xl backdrop-blur-md transition absolute sm:relative">
+                    No 🙈
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 py-6 text-center text-xs text-slate-500">
+        <p>Made with endless love and a lot of heart for Cutie Ella.</p>
+    </footer>
+
+    <!-- Interactive Script -->
+    <script>
+        function moveButton() {
+            const noBtn = document.getElementById('no-btn');
+            const randomX = Math.random() * (window.innerWidth - 150);
+            const randomY = Math.random() * (window.innerHeight - 150);
+            
+            noBtn.style.position = 'fixed';
+            noBtn.style.left = randomX + 'px';
+            noBtn.style.top = randomY + 'px';
+        }
+
+        function sayYes() {
+            const confessionBox = document.getElementById('confession-box');
+            confessionBox.innerHTML = `
+                <div class="text-center py-4">
+                    <div class="text-5xl mb-4">🎉🥰💖</div>
+                    <h2 class="text-3xl font-black text-rose-300 mb-2">My Heart is Yours!</h2>
+                    <p class="text-slate-200 text-base leading-relaxed">
+                        Thank you for making me the happiest person, Cutie Ella. You mean the absolute world to me! 🌹✨
+                    </p>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
